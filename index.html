@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            shape
+        </title>
+    </head>
+    <body onload="draw1()">
+
+        <canvas id="canvas" width="1000"height="1000">
+
+        </canvas>
+        
+        <script>
+            var x=580;
+            var y=620;
+            function draw1(){
+            var c=document.getElementById("canvas");
+            if(c.getContext){
+                var ctx=c.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(500,300);
+                ctx.arc(600,300,100,0,Math.PI,true);
+                ctx.lineTo(500,500);
+                ctx.lineTo(550,450);
+                ctx.lineTo(600,500);
+                ctx.lineTo(650,450);
+                ctx.lineTo(700,500);
+                ctx.lineTo(700,300)
+                //ctx.stroke();
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(570,250,15,0,Math.PI*2,true);
+                ctx.moveTo(645,250);
+                ctx.arc(630,250,15,0,Math.PI*2,true);
+                //ctx.moveTo()
+                //ctx.stroke();
+               // ctx.fill();
+                ctx.fillStyle="white";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(x,250,5,0,Math.PI*2,true);
+                ctx.arc(y,250,5,0,Math.PI*2,true);
+                ctx.fillStyle="black";
+                ctx.fill(); 
+                if(x>560 || y<640)
+                {x=560
+                y=640}
+                else{
+                    x=580;
+                    y=620;
+                }
+            }
+            }
+            setInterval(function(){draw1()},500);
+            /*function draw2(){
+                var c1=document.getElementById("canvas");
+                if(c1.getContext){
+                    var ctx=getContext('2d');
+                    ctx.beginPath();
+                    ctx.arc(580,250,5,0,Math.PI*2,true);
+                }
+
+            }*/
+        </script>
+    </body>
